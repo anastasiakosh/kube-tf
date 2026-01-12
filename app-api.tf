@@ -9,8 +9,8 @@ resource "kubernetes_manifest" "api_application" {
     spec = {
       project = "default"
       source = {
-        repoURL        = "https://github.com/anastasiakosh/api-prometheus" 
-        targetRevision = "HEAD"
+        repoURL        = "https://github.com/anastasiakosh/kube-tf" 
+        targetRevision = "custom"
         path           = "k8s" 
       }
       destination = {
