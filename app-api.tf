@@ -10,7 +10,7 @@ resource "kubernetes_manifest" "api_application" {
       project = "default"
       source = {
         repoURL        = "https://github.com/anastasiakosh/kube-tf" 
-        targetRevision = "custom"
+        targetRevision = "function"
         path           = "k8s" 
       }
       destination = {
