@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-prometheus
+  labels:
+    app: api-prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-prometheus
+  template:
+    metadata:
+      labels:
+        app: api-prometheus
+    spec:
+      containers:
+      - name: api
+        image: python:3.9-slim
+        command: ["python", "-m", "http.server", "8000"]
+        ports:
+        - containerPort: 8000
+          name: http
